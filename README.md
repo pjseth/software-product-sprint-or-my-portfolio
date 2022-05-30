@@ -2,6 +2,8 @@
 
 This repo contains the projects you'll work on throughout SPS.
 
+This repo contains PJ Sethbhakdi's portfolio and SPS projects.
+
 To get started:
 
 - Login to [Google Cloud Shell](https://ssh.cloud.google.com/cloudshell/editor)
