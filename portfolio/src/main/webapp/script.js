@@ -13,8 +13,37 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random movie quote to the page.
  */
+function addBBQuote() {
+    const quotes =
+        ['I am the one who knocks.', 'Tread lightly', 'Say my name', 'Ayo Mr. White!', 
+        'Just because you killed Jesse James, don’t make you Jesse James', 'Ahhhh wire!',
+        'I did it for me.', 'Stay out of my territory', 'Yeah science!'];
+  
+    // Pick a random quote.
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+  
+    // Add it to the page.
+    const quoteContainer = document.getElementById('quote-container');
+    quoteContainer.innerText = quote;
+  }
+
+  function tQuestion($event) {
+    console.log(event);
+    var temp = event.target;
+    var temp1 = event.target.nextElementSibling;
+    console.log(temp);
+    console.log(temp1);
+  if (temp1.className=="answerBlock") {
+      temp1.classList.remove("answerBlock");
+      temp.innerHTML = 'Show Answer';
+  } else {
+      temp1.classList.add("answerBlock");
+      temp.innerHTML = 'Hide Answer';
+  }
+}
+
 function addRandomGreeting() {
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
@@ -26,3 +55,35 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
