@@ -17,6 +17,8 @@ public class HelloWorldServlet extends HttpServlet {
     pageViews++;
     response.setContentType("text/html;");
     response.getWriter().println("<h1>Hello PJ!</h1>");
+    response.getWriter().println("<h1>This is where the server code should be</h1>");
     response.getWriter().println("<p>This page has been viewed " + pageViews + " times.</p>");
   }
+
 }

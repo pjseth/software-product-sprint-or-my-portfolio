@@ -87,3 +87,11 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
+/** Fetches the current date from the server and adds it to the page. */
+async function revealHello() {
+    const responseFromServer = await fetch('/hello-pj');
+    const textFromResponse = await responseFromServer.text();
+  
+    const dateContainer = document.getElementById('date-container');
+    dateContainer.innerText = textFromResponse;
+}
