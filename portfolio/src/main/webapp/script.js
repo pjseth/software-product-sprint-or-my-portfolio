@@ -92,6 +92,19 @@ async function revealHello() {
     const responseFromServer = await fetch('/hello-pj');
     const textFromResponse = await responseFromServer.text();
   
-    const dateContainer = document.getElementById('date-container');
-    dateContainer.innerText = textFromResponse;
+    const helloContainer = document.getElementById('hello-container');
+    helloContainer.innerText = textFromResponse;
+}
+
+async function revealSmashMain() {
+    // Send a request to /my-data-url.
+    const responseFromServer = await fetch('/smash');
+    // Parse the response as JSON.
+    const myObject = await responseFromServer.json();
+    const character = myObject[Math.floor(Math.random() * myObject.length)];
+    // Now we can reference the fields in myObject!
+    console.log(myObject);
+
+    const smashContainer = document.getElementById('smash-container');
+    smashContainer.innerText = character;
 }

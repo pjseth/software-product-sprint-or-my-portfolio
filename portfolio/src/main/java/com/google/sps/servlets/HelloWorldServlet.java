@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Handles requests sent to the /hello-pj URL. Try running a server and navigating to /hello! */
+/** Handles requests sent to the /hello-pj URL. Try running a server and navigating to /hello-pj! */
 @WebServlet("/hello-pj")
 public class HelloWorldServlet extends HttpServlet {
 
