@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <link rel="icon" type="image/x-icon" href="/images/favicon (1).ico">
-<body style="background-color:#c4d8e2">
+<body style="background-color:#6b70cc">
+    
   <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body id="background_color">
     <div id="content">
        <center>
         <img id="pic" src="/images/profile.jpeg" alt="Picture of Pawit Sethbhakdi" width="130" height="130"/>
@@ -159,9 +159,7 @@
         </div>
 
         <br>
-        <br>        
-        <p>Stay tuned for my upcoming projects... </p>
-        <br>
+        
         <p>Click <a href="/hello-pj">here</a> to see content created by server code.</p>
 
         <p>Or click this button to reveal the server code:</p>
@@ -177,9 +175,51 @@
             Reveal Smash Main
         </button>
         <p id="smash-container"></p>
+        <br>
+        
+        <div class="rectangle">
+            <form action="/form-handler" method="POST" class="rectangle">
+                <h1>Contact Me!</h1>
+                <p>Choose 1 type of contact:</p>
 
+                <input type="radio" id="email" name="contact">
+                <label for="email">Email</label><br>
+
+                <input type="radio" id="phone" name="contact">
+                <label for="phone">Phone</label><br>
+
+                <input type="radio" id="discord" name="contact">
+                <label for="discord">Discord</label><br>
+
+                <input type="radio" id="other" name="contact">
+                <label for="other">Other...</label><br>
+                <br/><br/>
+                    
+                <p>Please enter your contact</p>
+                <textarea name="text-input"></textarea>
+                <br/><br/>
+              
+                <input type="submit" />
+            </form>
+        </div>
+        
+        <br>        
+        <p>Stay tuned for my upcoming projects... </p>
+        <br>
         
     </div>
-  </body>
+    <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+    </ul>
+   
 <body> 
 </html>

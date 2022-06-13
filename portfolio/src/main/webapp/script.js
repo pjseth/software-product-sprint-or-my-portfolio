@@ -108,3 +108,4 @@ async function revealSmashMain() {
     const smashContainer = document.getElementById('smash-container');
     smashContainer.innerText = character;
 }
+
