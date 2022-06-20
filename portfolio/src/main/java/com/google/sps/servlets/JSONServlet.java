@@ -4,7 +4,6 @@ package com.google.sps.servlets;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import com.google.gson.Gson;
-import java.util.*;
 import java.lang.String;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +16,7 @@ public class JSONServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
         //Convert ArrayList as JSON String
         String json = new Gson().toJson(smashChar);
 

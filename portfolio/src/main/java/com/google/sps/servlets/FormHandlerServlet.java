@@ -1,11 +1,16 @@
 package com.google.sps.servlets;
 
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.FullEntity;
+import com.google.cloud.datastore.KeyFactory;
 import java.io.IOException;
-import java.util.Arrays;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.jsoup.Jsoup;
 
 /** Servlet that processes text. */
 @WebServlet("/form-handler")
@@ -15,31 +20,22 @@ public final class FormHandlerServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form.
     String text = getParameter(request, "text-input", "");
-    boolean email = Boolean.parseBoolean(getParameter(request, "Email", "false"));
-    boolean phone = Boolean.parseBoolean(getParameter(request, "Phone", "false"));
-    boolean discord = Boolean.parseBoolean(getParameter(request, "Discord", "false"));
-    boolean other = Boolean.parseBoolean(getParameter(request, "Other", "false"));
-
-    if (email) {
-      text = "(Email) "+text;
-    }
-
-    if (phone) {
-        text = "(Phone) "+text;
-    }
-
-    if (discord) {
-        text = "(Discord) "+text;
-    }
-
-    if (other) {
-        text = "(Other) "+text;
-    }
+    String type = request.getParameter("contact");
 
     // Respond with the result.
     response.setContentType("text/html;");
     response.getWriter().println(text);
     System.out.println("You submitted: " + text);
+
+    // Creating a Datastore
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Contacts");
+    FullEntity contactEntity =
+        Entity.newBuilder(keyFactory.newKey())
+            .set("type", type)
+            .set("text", text)
+            .build();
+    datastore.put(contactEntity);
 
     response.sendRedirect("https://psethbhakdi-sps-summer22.appspot.com/");
   }
@@ -55,4 +51,5 @@ public final class FormHandlerServlet extends HttpServlet {
     }
     return value;
   }
+
 }
