@@ -1,19 +1,228 @@
 <!DOCTYPE html>
 <html>
+<link rel="icon" type="image/x-icon" href="/images/favicon (1).ico">
+<body style="background-color:#6b70cc">
+    
   <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+       <center>
+        <img id="pic" src="/images/profile.jpeg" alt="Picture of Pawit Sethbhakdi" width="130" height="130"/>
+       </center> 
+
+      <h1 style="text-align:center">Pawit Sethbhakdi's Portfolio</h1>
+      <div id="icon">
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Add font awesome icons -->
+        <center>
+            <a href="https://www.linkedin.com/in/pjseth/" class="fa fa-linkedin"></a>
+            <a href="https://github.com/pjseth/SPS" class="fa fa-github"></a>
+            <a href="mailto:ps3201@columbia.edu" class="fa fa-envelope"></a>    
+        </center>
+        
+      </div>
+
+      <p>Hello World! My nickname is PJ, and I am a rising junior at Columbia University studying CS and IEOR. 
+        I am originally from Thailand, but I currently reside in New York. I love watching movies, playing games, and chilling with friends. 
+        I grew up playing volleyball and squash. I am an advocate for waste management and environmentalism. My favorite foods are sushi and prosciutto. </p>
+            
+      <p>Here is some trivia questions about me:</p>
+      <ol>
+        <li>What is my favorite movie?
+          <button onclick="tQuestion()">Show Answer</button>
+          <div style="display: none;">
+            Speed Racer (2008)
+          </div>
+        </li>
+      
+        <li>What is my favorite video game series?
+          <button onclick="tQuestion()">Show Answer</button>
+          <div style="display: none;">
+            Super Smash Bros.
+          </div>
+        </li>
+
+        <li>What is my favorite book?
+            <button onclick="tQuestion()">Show Answer</button>
+            <div style="display: none;">
+              The Outsiders by S.E Hinton
+            </div>
+        </li>
+
+        <li>What is my favorite snack?
+            <button onclick="tQuestion()">Show Answer</button>
+            <div style="display: none;">
+              Goldfish
+            </div>
+        </li>
+
+        <li>Who is my favorite youtuber?
+            <button onclick="tQuestion()">Show Answer</button>
+            <div style="display: none;">
+              PewDiePie
+            </div>
+        </li>
+
+      </ol>  
+
+      <p>Click the button to get a random quote from my favorite TV show: Breaking Bad</p>
+      <button onclick="addBBQuote()">Breaking Bad Quote</button>
+      <div id="quote-container"></div> 
+      
+      <br>
+    
+      <p>Here is a slideshow of my life: </p>
+      <!-- Container for the image gallery -->
+        <div class="gallery">
+                <!-- Full-width images with number text -->
+            <center>
+                <div class="mySlides">
+                    <div class="numbertext">1 / 6</div>
+                        <img src="/images/love.jpg" style="width:50%">
+                </div>
+                
+                <div class="mySlides">
+                    <div class="numbertext">2 / 6</div>
+                        <img src="/images/me.JPG" style="width:50%">
+                </div>
+                
+                <div class="mySlides">
+                    <div class="numbertext">3 / 6</div>
+                        <img src="/images/ted.JPG" style="width:50%">
+                </div>
+                
+                <div class="mySlides">
+                    <div class="numbertext">4 / 6</div>
+                        <img src="/images/friends.JPG" style="width:50%">
+                </div>
+                
+                <div class="mySlides">
+                    <div class="numbertext">5 / 6</div>
+                        <img src="/images/fam.jpg" style="width:50%">
+                </div>
+                
+                <div class="mySlides">
+                    <div class="numbertext">6 / 6</div>
+                        <img src="/images/parents.JPG" style="width:50%">
+                </div>
+            </center>   
+            
+        
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+            <!-- Image text -->
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+        
+            <!-- Thumbnail images -->
+            <div class="row">
+                <center>
+                    <div class="column">
+                        <img id="pic" class="demo cursor" src="/images/love.jpg" style="width:50%" 
+                        onclick="currentSlide(1)" alt="Going to a college formal wearing our snuggies. Love you Em">
+                    </div>
+                    <div class="column">
+                        <img id="pic" class="demo cursor" src="/images/me.JPG" style="width:50%" 
+                        onclick="currentSlide(2)" alt="Trip to the saltiest city with a lake">
+                    </div>
+                    <div class="column">
+                        <img id="pic" class="demo cursor" src="/images/ted.JPG" style="width:50%" 
+                        onclick="currentSlide(3)" alt="Teddy Sethbhakdi: the cutest and brattiest dog in the world">
+                    </div>
+                    <div class="column">
+                        <img id="pic" class="demo cursor" src="/images/friends.JPG" style="width:50%" 
+                        onclick="currentSlide(4)" alt="Back at home in Thailand! I miss you guys! ">
+                    </div>
+                    <div class="column">
+                        <img id="pic" class="demo cursor" src="/images/fam.jpg" style="width:50%" 
+                        onclick="currentSlide(5)" alt="The golden years with my family. Right before the storm of college">
+                    </div>
+                    <div class="column">
+                        <img id="pic" class="demo cursor" src="/images/parents.JPG" style="width:50%" 
+                        onclick="currentSlide(6)" alt="To the greatest legends in my life">
+                    </div>
+                </center>
+
+                <script>
+                    currentSlide(1)
+                </script>   
+            </div>
+        </div>
+
+        <br>
+        
+        <p>Click <a href="/hello-pj">here</a> to see content created by server code.</p>
+
+        <p>Or click this button to reveal the server code:</p>
+        <button onclick="revealHello();">
+            Get server code
+        </button>
+        <p id="hello-container"></p>
+        
+        <p>Click <a href="/smash">here</a> to see a list of my favorite smash characters.</p>
+
+        <p>Or click this button to reveal one of my favorite characters to play in Super Smash Brothers:</p>
+        <button onclick="revealSmashMain();">
+            Reveal Smash Main
+        </button>
+        <p id="smash-container"></p>
+        <br>
+        
+        <div class="rectangle">
+            <form action="/form-handler" method="POST" class="rectangle">
+                <h1>Contact Me!</h1>
+                <p>Choose 1 type of contact:</p>
+
+                <input type="radio" id="email" name="contact" value="email">
+                <label for="email">Email</label><br>
+
+                <input type="radio" id="phone" name="contact" value="phone">
+                <label for="phone">Phone</label><br>
+
+                <input type="radio" id="discord" name="contact" value="discord">
+                <label for="discord">Discord</label><br>
+
+                <input type="radio" id="other" name="contact" value="other">
+                <label for="other">Other...</label><br>
+                <br/><br/>
+                    
+                <p>Please enter your contact</p>
+                <textarea name="text-input"></textarea>
+                <br/><br/>
+              
+                <input type="submit" />
+            </form>
+        </div>
+
+        <p>Click <a href="/list-contacts">here</a> to see all the contacts sent.</p>
+
+        
+        <br>        
+        <p>Stay tuned for my upcoming projects... </p>
+        <br>
+        
     </div>
-  </body>
+    <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+    </ul>
+   
+<body> 
 </html>
